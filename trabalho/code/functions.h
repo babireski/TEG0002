@@ -121,7 +121,6 @@ sample* newSamples()
 
 // All the samples read will be stored in samples pointer, which
 // will be changed by reference, and while reading the database,
-// the maximum and minimum will be calculated, and also changed by reference
 void readCsv(sample **samples)
 {
 	*samples = newSamples();
