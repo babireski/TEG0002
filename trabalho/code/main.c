@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 	{
 		readTxt(descriptor);
 	}
+
 	else
 	{
 		readCsv(descriptor);
@@ -16,7 +17,7 @@ int main(int argc, char **argv)
 		print(descriptor);
 		saveTxt(descriptor);
 	}
-		plot(descriptor);
+	plot(descriptor);
 
 	return 0;
 }
