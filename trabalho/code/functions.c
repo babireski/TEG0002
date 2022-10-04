@@ -2,13 +2,7 @@
 
 float distance(sample p, sample q)
 {
-	float square = 0;
-	square = square + (p.petal.length + q.petal.length) * (p.petal.length + q.petal.length);
-	square = square + (p.sepal.length + q.sepal.length) * (p.sepal.length + q.sepal.length);
-	square = square + (p.petal.width + q.petal.width) * (p.petal.width + q.petal.width);
-	square = square + (p.sepal.width + q.sepal.width) * (p.sepal.width + q.sepal.width);
-
-	return sqrt(square);
+    return sqrt(pow((p.petal.length - q.petal.length), 2) + pow((p.petal.width - q.petal.width), 2) + pow((p.sepal.length - q.sepal.length), 2) + pow((p.sepal.width - q.sepal.width), 2));
 }
 
 float normalize(float x, float maximum, float minimum)
@@ -76,7 +70,7 @@ void superLink(graph *descriptor)
 	int m = descriptor -> order;
 	float distances[150][150];
 
-	float d = distance(descriptor -> nodes[0].sample, descriptor -> nodes[0].sample);
+	float d = distance(descriptor -> nodes[0].sample, descriptor -> nodes[1].sample);
 	float maximum = d;
 	float minimum = d;
 
@@ -89,7 +83,7 @@ void superLink(graph *descriptor)
 			if(d > maximum) maximum = d;
 			if(d < minimum) minimum = d;
 			
-			distances[i][j] = d;
+			distances[i][j] = distances[j][i] = d;
 			distances[j][i] = d;
 		}
 	}
