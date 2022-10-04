@@ -73,6 +73,53 @@ void link(graph *descriptor, float **distances)
 	}
 }
 
+void superlink(graph *descriptor)
+{
+	int m = descriptor -> order;
+	float distances[150][150];
+
+	float d = distance(descriptor -> nodes[0].sample, descriptor -> nodes[0].sample);
+	float maximum = d;
+	float minimum = d;
+
+	for(int i = 0; i < m; i++)
+	{
+		for(int j = i + 1; j < m; j++)
+		{
+			d = distance(descriptor -> nodes[i].sample, descriptor -> nodes[j].sample);
+			
+			if(d > maximum) maximum = d;
+			if(d < minimum) minimum = d;
+			
+			distances[i][j] = d;
+			distances[j][i] = d;
+		}
+	}
+
+	for(int i = 0; i < m; i++)
+	{
+		for(int j = i; j < m; j++)
+		{
+			float n = normalize(distances[i][j], maximum, minimum);
+			
+			distances[i][j] = n;
+			distances[j][i] = n;
+		}
+	}
+
+	for(int i = 0; i < m; i++)
+	{
+		for(int j = i + 1; j < m; j++)
+		{
+			if(distances[i][j] < bound)
+			{
+				add_edge(descriptor, i, j);
+				add_edge(descriptor, j, i);
+			}
+		}
+	}
+}
+
 void read(graph *descriptor)
 {
 	FILE *dataset = fopen("../data/dataset.csv", "r");
@@ -92,8 +139,7 @@ void read(graph *descriptor)
 	while(!feof(dataset))
 	{
 		sample s = create_sample();
-		char *buffer;
-		fscanf(dataset, "%f,%f,%f,%f,%s\n", &s.sepal.length, &s.sepal.length, &s.sepal.length, &s.sepal.length, species);
+		fscanf(dataset, "%f,%f,%f,%f,%s\n", &s.sepal.length, &s.sepal.width, &s.petal.length, &s.petal.width, species);
 
 		if (strcmp(species, "\"Setosa\"") == 0)
 		{
@@ -181,9 +227,9 @@ void plot(graph *descriptor)
 	for(int i = 0; i < descriptor -> order; i++)
 	{
 		fprintf(plot, "\n");
-		if(descriptor -> nodes[i].sample.species == SETOSA) fprintf(plot, "node [shape = circle style = filled, color %s; %i;", colors[SETOSA], i);
-		else if(descriptor -> nodes[i].sample.species == VERSICOLOUR) fprintf(plot, "node [shape = circle style = filled, color %s; %i;", colors[VERSICOLOUR], i);
-		else if(descriptor -> nodes[i].sample.species == VIRGINICA) fprintf(plot, "node [shape = circle style = filled, color %s; %i;", colors[VIRGINICA], i);
+		if(descriptor -> nodes[i].sample.species == SETOSA) fprintf(plot, "node [shape = circle style = filled, color = %s]; %i;", colors[SETOSA], i);
+		else if(descriptor -> nodes[i].sample.species == VERSICOLOUR) fprintf(plot, "node [shape = circle style = filled, color = %s]; %i;", colors[VERSICOLOUR], i);
+		else if(descriptor -> nodes[i].sample.species == VIRGINICA) fprintf(plot, "node [shape = circle style = filled, color = %s]; %i;", colors[VIRGINICA], i);
 	}
 
 	fprintf(plot, "\n");

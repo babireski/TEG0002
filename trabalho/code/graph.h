@@ -52,7 +52,7 @@ void add_edge(graph *descriptor, int head, int tail)
 
 	if(last)
 	{
-		for(last; last -> next != NULL; last = last -> next);
+		for(; last -> next != NULL; last = last -> next);
 		last -> next = new_edge;
 	}
 
