@@ -6,19 +6,19 @@ typedef struct edge edge;
 
 struct graph
 {
-    node *nodes;
-    int order;
+	node *nodes;
+	int order;
 };
 
 struct node
 {
-    sample sample;
-    edge *edges;
-    int degree;
+	sample sample;
+	edge *edges;
+	int degree;
 };
 
 struct edge
 {
-    int node;
-    edge *next;
+	int node;
+	edge *next;
 };

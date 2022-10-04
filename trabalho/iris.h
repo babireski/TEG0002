@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 #define SETOSA 1
 #define VERSICOLOUR 2
@@ -8,15 +10,15 @@
 typedef struct dimensions dimensions;
 typedef struct sample sample;
 
-struct sample
-{
-    dimensions petal;
-    dimensions sepal;
-    int species;
-};
-
 struct dimensions
 {
-    float length;
-    float width;
+	float length;
+	float width;
+};
+
+struct sample
+{
+	dimensions petal;
+	dimensions sepal;
+	int species;
 };
