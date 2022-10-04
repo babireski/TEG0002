@@ -205,7 +205,7 @@ void plot(graph *descriptor)
 {
 	FILE *plot = fopen("data/iris.dot", "w+");
 
-	fprintf(plot, "graph iris\n{\n");
+	fprintf(plot, "graph iris\n{");
 
 	char *colors[3];
 	colors[SETOSA] = "gold";
@@ -214,7 +214,7 @@ void plot(graph *descriptor)
 
 	for(int i = 0; i < descriptor -> order; i++)
 	{
-		fprintf(plot, "\nnode [shape = circle, style = filled, color = ");
+		fprintf(plot, "\n\tnode [shape = circle, style = filled, color = ");
 		if(descriptor -> nodes[i].sample.species == SETOSA) fprintf(plot, "%s", colors[SETOSA]);
 		else if(descriptor -> nodes[i].sample.species == VERSICOLOUR) fprintf(plot, "%s", colors[VERSICOLOUR]);
 		else if(descriptor -> nodes[i].sample.species == VIRGINICA) fprintf(plot, "%s", colors[VIRGINICA]);
@@ -230,7 +230,7 @@ void plot(graph *descriptor)
 			if(navigator -> node > i)
 			{
 				fprintf(plot, "\n");
-				fprintf(plot, "%i -- %i", i, navigator -> node);
+				fprintf(plot, "\t%i -- %i", i, navigator -> node);
 			}
 		}
 	}
