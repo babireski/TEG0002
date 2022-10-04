@@ -88,19 +88,15 @@ void load()
 
 void printGraph(graph* graph)
 {
+
 	for (int i = 0; i < graph->order; i++)
 	{
-		node* auxNode = graph->nodes[i];
 		printf("v[%d] --> ", i);
-		while (auxNode != NULL)
+		if (graph->nodes[i].edges->next == NULL)
 		{
-			if (auxNode->edges->next == NULL)
-			{
-				printf("%d", auxNode->edges->node);
-			}
-			printf("%d -->", auxNode->edges->node);
-			auxNode = auxNode->edges->next;
+			printf("%d", graph->nodes[i].edges->node);
 		}
+		printf("%d -->", graph->nodes[i].edges->node);
 		printf("\n");
 	}
 }
@@ -117,14 +113,12 @@ void saveTxt(graph* graph)
 
 	for (int i = 0; i < graph->order; i++)
 	{
-		node* auxNode = graph->nodes[i];
 		fprintf(fptr, "%d", i);
 		for (int j = i + 1; j < graph->order; j++)
 		{
-			if (auxNode->edges->node < auxNode->edges->next->node) {
-				fprintf(fptr, "%d %d\n", auxNode->edges->node, auxNode->edges->next->node);
+			if (graph->nodes[i].edges->node < graph->nodes[i].edges->next->node) {
+				fprintf(fptr, "%d %d\n", graph->nodes[i].edges->node, graph->nodes[i].edges->next->node);
 			}
-			auxNode = auxNode->edges->next;
 		}
 		fprintf(fptr, "\n");
 	}
