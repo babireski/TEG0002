@@ -4,9 +4,10 @@ int main(void)
 {
 	graph *descriptor = create();
 	read(descriptor);
-	superlink(descriptor);
+	superLink(descriptor);
 	print(descriptor);
 	plot(descriptor);
-	
+	saveTxt(descriptor);
+
 	return 0;
 }

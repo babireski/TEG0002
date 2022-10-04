@@ -23,4 +23,4 @@ struct sample
 	int species;
 };
 
-sample create_sample();
+sample createSample();

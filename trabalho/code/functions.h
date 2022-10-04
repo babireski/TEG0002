@@ -1,5 +1,5 @@
 #include "graph.h"
-#define bound 0.12
+#define bound 0.3
 #define numSamples 150
 
 float distance(sample p, sample q);
@@ -10,7 +10,7 @@ float **table(graph *descriptor);
 
 void link(graph *descriptor, float **distances);
 
-void superlink(graph *descriptor);
+void superLink(graph *descriptor);
 
 void read(graph *descriptor);
 

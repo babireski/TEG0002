@@ -25,6 +25,6 @@ struct edge
 
 graph* create();
 
-void add_node(graph *descriptor, sample sample);
+void addNode(graph *descriptor, sample sample);
 
-void add_edge(graph *descriptor, int head, int tail);
+void addEdge(graph *descriptor, int head, int tail);

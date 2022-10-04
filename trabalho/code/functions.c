@@ -64,14 +64,14 @@ void link(graph *descriptor, float **distances)
 		{
 			if(distances[i][j] < bound)
 			{
-				add_edge(descriptor, i, j);
-				add_edge(descriptor, j, i);
+				addEdge(descriptor, i, j);
+				addEdge(descriptor, j, i);
 			}
 		}
 	}
 }
 
-void superlink(graph *descriptor)
+void superLink(graph *descriptor)
 {
 	int m = descriptor -> order;
 	float distances[150][150];
@@ -111,8 +111,8 @@ void superlink(graph *descriptor)
 		{
 			if(distances[i][j] < bound)
 			{
-				add_edge(descriptor, i, j);
-				add_edge(descriptor, j, i);
+				addEdge(descriptor, i, j);
+				addEdge(descriptor, j, i);
 			}
 		}
 	}
@@ -136,7 +136,7 @@ void read(graph *descriptor)
 
 	while(!feof(dataset))
 	{
-		sample s = create_sample();
+		sample s = createSample();
 		fscanf(dataset, "%f,%f,%f,%f,%s\n", &s.sepal.length, &s.sepal.width, &s.petal.length, &s.petal.width, species);
 
 		if (strcmp(species, "\"Setosa\"") == 0)
@@ -160,7 +160,7 @@ void read(graph *descriptor)
 			exit(-1);
 		}
 
-		add_node(descriptor, s);
+		addNode(descriptor, s);
 	}
 
 	fclose(dataset);
@@ -192,18 +192,17 @@ void saveTxt(graph* graph)
 		printf("Erro ao carregar arquivo.\n");
 		exit(-1);
 	}
-	fprintf(fptr, "%d\n", numSamples);
+	fprintf(fptr, "%d\n", graph->order);
 
-	for (int i = 0; i < graph->order; i++)
+	for(int i = 0; i < graph -> order; i++)
 	{
-		fprintf(fptr, "%d", i);
-		for (int j = i + 1; j < graph->order; j++)
+		for(edge *navigator = graph -> nodes[i].edges; navigator != NULL; navigator = navigator -> next)
 		{
-			if (graph->nodes[i].edges->node < graph->nodes[i].edges->next->node) {
-				fprintf(fptr, "%d %d\n", graph->nodes[i].edges->node, graph->nodes[i].edges->next->node);
+			if(navigator -> node > i)
+			{
+				fprintf(fptr, "%d %d\n", i, navigator -> node);
 			}
 		}
-		fprintf(fptr, "\n");
 	}
 	fclose(fptr);
 }

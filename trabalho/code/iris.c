@@ -1,6 +1,6 @@
 #include "iris.h"
 
-sample create_sample()
+sample createSample()
 {
 	sample sample;
 
