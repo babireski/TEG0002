@@ -112,7 +112,7 @@ void superLink(graph *descriptor)
 	}
 }
 
-void read(graph *descriptor)
+void readCsv(graph *descriptor)
 {
 	FILE *dataset = fopen("data/dataset.csv", "r");
 
@@ -194,7 +194,7 @@ void saveTxt(graph* graph)
 		{
 			if(navigator -> node > i)
 			{
-				fprintf(fptr, "%d %d\n", i, navigator -> node);
+				fprintf(fptr, "%d,%d\n", i, navigator -> node);
 			}
 		}
 	}
@@ -239,4 +239,58 @@ void plot(graph *descriptor)
 	fprintf(plot, "}");
 
 	fclose(plot);
+}
+
+void readTxt(graph *descriptor)
+{
+	FILE *fptr = fopen("data/graph.txt", "r");
+	if (fptr == NULL)
+	{
+		printf("Erro ao carregar arquivo.\n");
+		exit(-1);
+	}
+
+	fscanf(fptr, "%d", &descriptor->order);
+	descriptor->nodes = (node*) malloc(descriptor->order * sizeof(node));
+	descriptor->nodes->edges = NULL;
+	
+	int node1, node2;
+
+	while(!feof(fptr))
+	{
+		if (node1 / (descriptor->order / 3) == 0) {
+			descriptor->nodes[node1].sample.species = SETOSA;
+			printf("node %d = %d\n", node1, SETOSA);
+		}
+
+		else if (node1 / (descriptor->order / 3) == 1) {
+			descriptor->nodes[node1].sample.species = VERSICOLOUR;
+			printf("node %d = %d\n", node1, VERSICOLOUR);
+		}
+
+		else if (node1 / (descriptor->order / 3) == 2) {
+			descriptor->nodes[node1].sample.species = VIRGINICA;
+			printf("node %d = %d\n", node1, VIRGINICA);
+		}
+
+		if (node2 / (descriptor->order / 3) == 0) {
+			descriptor->nodes[node2].sample.species = SETOSA;
+			printf("node %d = %d\n", node2, SETOSA);
+		}
+
+		else if (node2 / (descriptor->order / 3) == 1) {
+			descriptor->nodes[node2].sample.species = VERSICOLOUR;
+			printf("node %d = %d\n", node2, VERSICOLOUR);
+		}
+
+		else if (node2 / (descriptor->order / 3) == 2) {
+			descriptor->nodes[node2].sample.species = VIRGINICA;
+			printf("node %d = %d\n", node2, VIRGINICA);
+		}
+
+		fscanf(fptr, "%d,%d", &node1, &node2);
+		addEdge(descriptor, node1, node2);
+	}
+
+	fclose(fptr);
 }

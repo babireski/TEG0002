@@ -12,10 +12,12 @@ void link(graph *descriptor, float **distances);
 
 void superLink(graph *descriptor);
 
-void read(graph *descriptor);
+void readCsv(graph *descriptor);
 
 void print(graph* graph);
 
 void saveTxt(graph* graph);
 
 void plot(graph *descriptor);
+
+void readTxt(graph *descriptor);
