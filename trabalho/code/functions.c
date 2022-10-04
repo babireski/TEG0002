@@ -120,7 +120,7 @@ void superlink(graph *descriptor)
 
 void read(graph *descriptor)
 {
-	FILE *dataset = fopen("../data/dataset.csv", "r");
+	FILE *dataset = fopen("data/dataset.csv", "r");
 
 	if(!dataset)
 	{
@@ -186,7 +186,7 @@ void print(graph* graph)
 
 void saveTxt(graph* graph)
 {
-	FILE *fptr = fopen("../data/graph.txt", "w+");
+	FILE *fptr = fopen("data/graph.txt", "w+");
 	if (fptr == NULL)
 	{
 		printf("Erro ao carregar arquivo.\n");
@@ -210,7 +210,7 @@ void saveTxt(graph* graph)
 
 void plot(graph *descriptor)
 {
-	FILE *plot = fopen("../data/iris.gv", "w+");
+	FILE *plot = fopen("data/iris.gv", "w+");
 
 	fprintf(plot, "graph iris\n{\n");
 
