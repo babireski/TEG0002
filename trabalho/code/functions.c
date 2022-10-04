@@ -16,11 +16,10 @@ float normalize(float x, float maximum, float minimum)
 	return (x - minimum) / (maximum - minimum);
 }
 
-float **table(graph *descriptor)
+void table(graph *descriptor)
 {
 	int m = descriptor -> order;
-	float **distances = (float **) malloc(m * sizeof(float *));
-	for(int i = 0; i < m; i++) distances[i] = (float *) malloc(m * sizeof(float));
+	float distances[m][m];
 
 	float d = distance(descriptor -> nodes[0].sample, descriptor -> nodes[0].sample);
 	float maximum = d;
@@ -50,8 +49,6 @@ float **table(graph *descriptor)
 			distances[j][i] = n;
 		}
 	}
-
-	return distances;
 }
 
 void link(graph *descriptor, float **distances)
@@ -189,7 +186,7 @@ void saveTxt(graph* graph)
 	FILE *fptr = fopen("data/graph.txt", "w+");
 	if (fptr == NULL)
 	{
-		printf("Erro ao carregar arquivo.\n");
+		printf("Erro ao carregar graph.txt.\n");
 		exit(-1);
 	}
 	fprintf(fptr, "%d\n", numSamples);

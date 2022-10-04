@@ -6,16 +6,18 @@ float distance(sample p, sample q);
 
 float normalize(float x, float maximum, float minimum);
 
-float **table(graph *descriptor);
+void table(graph *descriptor);
 
 void link(graph *descriptor, float **distances);
 
-void superlink(graph *descriptor);
+void plot(graph *descriptor);
 
-void read(graph *descriptor);
+sample* newSamples();
 
-void print(graph* graph);
+// All the samples read will be stored in samples pointer, which
+// will be changed by reference, and while reading the database,
+void readCsv(sample **samples);
+
+void printGraph(graph* graph);
 
 void saveTxt(graph* graph);
-
-void plot(graph *descriptor);
