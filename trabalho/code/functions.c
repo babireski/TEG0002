@@ -210,7 +210,7 @@ void saveTxt(graph* graph)
 
 void plot(graph *descriptor)
 {
-	FILE *plot = fopen("data/iris.gv", "w+");
+	FILE *plot = fopen("data/iris.dot", "w+");
 
 	fprintf(plot, "graph iris\n{\n");
 
