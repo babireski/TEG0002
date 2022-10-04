@@ -6,11 +6,7 @@ float distance(sample p, sample q);
 
 float normalize(float x, float maximum, float minimum);
 
-float **table(graph *descriptor);
-
-void link(graph *descriptor, float **distances);
-
-void superLink(graph *descriptor);
+void link(graph *descriptor);
 
 void readCsv(graph *descriptor);
 

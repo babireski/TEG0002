@@ -10,62 +10,8 @@ float normalize(float x, float maximum, float minimum)
 	return (x - minimum) / (maximum - minimum);
 }
 
-float **table(graph *descriptor)
-{
-	int m = descriptor -> order;
-	float **distances = (float **) malloc(m * sizeof(float *));
-	for(int i = 0; i < m; i++) distances[i] = (float *) malloc(m * sizeof(float));
 
-	float d = distance(descriptor -> nodes[0].sample, descriptor -> nodes[0].sample);
-	float maximum = d;
-	float minimum = d;
-
-	for(int i = 0; i < m; i++)
-	{
-		for(int j = i + 1; j < m; j++)
-		{
-			d = distance(descriptor -> nodes[i].sample, descriptor -> nodes[j].sample);
-			
-			if(d > maximum) maximum = d;
-			if(d < minimum) minimum = d;
-			
-			distances[i][j] = d;
-			distances[j][i] = d;
-		}
-	}
-
-	for(int i = i; i < m; i++)
-	{
-		for(int j = i; j < m; j++)
-		{
-			float n = normalize(distances[i][j], maximum, minimum);
-			
-			distances[i][j] = n;
-			distances[j][i] = n;
-		}
-	}
-
-	return distances;
-}
-
-void link(graph *descriptor, float **distances)
-{
-	int m = descriptor -> order;
-
-	for(int i = 0; i < m; i++)
-	{
-		for(int j = i + 1; j < m; j++)
-		{
-			if(distances[i][j] < bound)
-			{
-				addEdge(descriptor, i, j);
-				addEdge(descriptor, j, i);
-			}
-		}
-	}
-}
-
-void superLink(graph *descriptor)
+void link(graph *descriptor)
 {
 	int m = descriptor -> order;
 	float distances[150][150];
