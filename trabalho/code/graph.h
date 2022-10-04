@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "iris.h"
 
 typedef struct graph graph;
@@ -51,3 +52,29 @@ void add_edge(graph *descriptor, int head, int tail)
     for(last = descriptor -> nodes[head].edges; last != NULL; last = last -> next);
     last -> next = new_edge;
 }
+=======
+#include "iris.h"
+
+typedef struct graph graph;
+typedef struct node node;
+typedef struct edge edge;
+
+struct graph
+{
+	node *nodes;
+	int order;
+};
+
+struct node
+{
+	sample sample;
+	edge *edges;
+	int degree;
+};
+
+struct edge
+{
+	int node;
+	edge *next;
+};
+>>>>>>> f8f5a45ff5cd7c7c22afc6db0006c8a087e20b12
