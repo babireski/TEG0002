@@ -53,11 +53,11 @@ int main(int argc, char **argv)
 
     while(1)
     {
-        limpar();
+        clean();
         menu();
         printf("Escolha uma funcionalidade: ");
         scanf("%i", &choice);
-        limpar();
+        clean();
 
         switch(choice)
         {
