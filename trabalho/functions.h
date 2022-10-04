@@ -28,7 +28,7 @@ sample* newSamples()
 // All the samples read will be stored in samples pointer, which
 // will be changed by reference, and while reading the database,
 // the maximum and minimum will be calculated, and also changed by reference
-void read(sample **samples)
+void readCsv(sample **samples)
 {
 	*samples = newSamples();
 	FILE *dataset = fopen("dataset.csv", "r");
@@ -42,6 +42,7 @@ void read(sample **samples)
 	int num = 0;
 	char* firstLine = (char*) malloc(sizeof(char) * 100);
 	char* variety = (char*) malloc(sizeof(char*));
+	int species;
 	float sepLen;
 	float sepWid;
 	float petLen;
@@ -59,24 +60,23 @@ void read(sample **samples)
 		(*samples)[num].petal.width = petWid;
 		if (strcmp(variety, "\"Setosa\"") == 0)
 		{
-			(*samples)[num].species = 1;
+			species = 1;
 		}
 		else if (strcmp(variety, "\"Versicolor\"") == 0)
 		{
-			(*samples)[num].species = 2;
+			species = 2;
 		}
 		else if (strcmp(variety, "\"Virginica\"") == 0)
 		{
-			(*samples)[num].species = 3;
+			species = 3;
 		}
 		else
 		{
 			printf("Especie nao reconhecida. Abortando\n");
 			exit(-1);
 		}
-		// mallocating a bit wrong, need to find out why.
-		// the rest aparently is working fine
-		num = num + 1;
+		(*samples)[num].species = species;
+		num += 1;
 	}
 	free(variety);
 }
@@ -86,9 +86,49 @@ void load()
 
 }
 
-void save()
+void printGraph(graph* graph)
 {
-	
+	for (int i = 0; i < graph->order; i++)
+	{
+		node* auxNode = graph->nodes[i];
+		printf("v[%d] --> ", i);
+		while (auxNode != NULL)
+		{
+			if (auxNode->edges->next == NULL)
+			{
+				printf("%d", auxNode->edges->node);
+			}
+			printf("%d -->", auxNode->edges->node);
+			auxNode = auxNode->edges->next;
+		}
+		printf("\n");
+	}
+}
+
+void saveTxt(graph* graph)
+{
+	FILE *fptr = fopen("grafo.txt", "w+");
+	if (fptr == NULL)
+	{
+		printf("Erro ao carregar arquivo.\n");
+		exit(-1);
+	}
+	fprintf(fptr, "%d\n", numSamples);
+
+	for (int i = 0; i < graph->order; i++)
+	{
+		node* auxNode = graph->nodes[i];
+		fprintf(fptr, "%d", i);
+		for (int j = i + 1; j < graph->order; j++)
+		{
+			if (auxNode->edges->node < auxNode->edges->next->node) {
+				fprintf(fptr, "%d %d\n", auxNode->edges->node, auxNode->edges->next->node);
+			}
+			auxNode = auxNode->edges->next;
+		}
+		fprintf(fptr, "\n");
+	}
+	fclose(fptr);
 }
 
 void plot()
