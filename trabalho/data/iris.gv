@@ -1,165 +1,485 @@
 graph iris
 {
 
-node [shape = circle style = filled, color gold; 0;
-node [shape = circle style = filled, color gold; 1;
-node [shape = circle style = filled, color gold; 2;
-node [shape = circle style = filled, color gold; 3;
-node [shape = circle style = filled, color gold; 4;
-node [shape = circle style = filled, color gold; 5;
-node [shape = circle style = filled, color gold; 6;
-node [shape = circle style = filled, color gold; 7;
-node [shape = circle style = filled, color gold; 8;
-node [shape = circle style = filled, color gold; 9;
-node [shape = circle style = filled, color gold; 10;
-node [shape = circle style = filled, color gold; 11;
-node [shape = circle style = filled, color gold; 12;
-node [shape = circle style = filled, color gold; 13;
-node [shape = circle style = filled, color gold; 14;
-node [shape = circle style = filled, color gold; 15;
-node [shape = circle style = filled, color gold; 16;
-node [shape = circle style = filled, color gold; 17;
-node [shape = circle style = filled, color gold; 18;
-node [shape = circle style = filled, color gold; 19;
-node [shape = circle style = filled, color gold; 20;
-node [shape = circle style = filled, color gold; 21;
-node [shape = circle style = filled, color gold; 22;
-node [shape = circle style = filled, color gold; 23;
-node [shape = circle style = filled, color gold; 24;
-node [shape = circle style = filled, color gold; 25;
-node [shape = circle style = filled, color gold; 26;
-node [shape = circle style = filled, color gold; 27;
-node [shape = circle style = filled, color gold; 28;
-node [shape = circle style = filled, color gold; 29;
-node [shape = circle style = filled, color gold; 30;
-node [shape = circle style = filled, color gold; 31;
-node [shape = circle style = filled, color gold; 32;
-node [shape = circle style = filled, color gold; 33;
-node [shape = circle style = filled, color gold; 34;
-node [shape = circle style = filled, color gold; 35;
-node [shape = circle style = filled, color gold; 36;
-node [shape = circle style = filled, color gold; 37;
-node [shape = circle style = filled, color gold; 38;
-node [shape = circle style = filled, color gold; 39;
-node [shape = circle style = filled, color gold; 40;
-node [shape = circle style = filled, color gold; 41;
-node [shape = circle style = filled, color gold; 42;
-node [shape = circle style = filled, color gold; 43;
-node [shape = circle style = filled, color gold; 44;
-node [shape = circle style = filled, color gold; 45;
-node [shape = circle style = filled, color gold; 46;
-node [shape = circle style = filled, color gold; 47;
-node [shape = circle style = filled, color gold; 48;
-node [shape = circle style = filled, color gold; 49;
-node [shape = circle style = filled, color green; 50;
-node [shape = circle style = filled, color green; 51;
-node [shape = circle style = filled, color green; 52;
-node [shape = circle style = filled, color green; 53;
-node [shape = circle style = filled, color green; 54;
-node [shape = circle style = filled, color green; 55;
-node [shape = circle style = filled, color green; 56;
-node [shape = circle style = filled, color green; 57;
-node [shape = circle style = filled, color green; 58;
-node [shape = circle style = filled, color green; 59;
-node [shape = circle style = filled, color green; 60;
-node [shape = circle style = filled, color green; 61;
-node [shape = circle style = filled, color green; 62;
-node [shape = circle style = filled, color green; 63;
-node [shape = circle style = filled, color green; 64;
-node [shape = circle style = filled, color green; 65;
-node [shape = circle style = filled, color green; 66;
-node [shape = circle style = filled, color green; 67;
-node [shape = circle style = filled, color green; 68;
-node [shape = circle style = filled, color green; 69;
-node [shape = circle style = filled, color green; 70;
-node [shape = circle style = filled, color green; 71;
-node [shape = circle style = filled, color green; 72;
-node [shape = circle style = filled, color green; 73;
-node [shape = circle style = filled, color green; 74;
-node [shape = circle style = filled, color green; 75;
-node [shape = circle style = filled, color green; 76;
-node [shape = circle style = filled, color green; 77;
-node [shape = circle style = filled, color green; 78;
-node [shape = circle style = filled, color green; 79;
-node [shape = circle style = filled, color green; 80;
-node [shape = circle style = filled, color green; 81;
-node [shape = circle style = filled, color green; 82;
-node [shape = circle style = filled, color green; 83;
-node [shape = circle style = filled, color green; 84;
-node [shape = circle style = filled, color green; 85;
-node [shape = circle style = filled, color green; 86;
-node [shape = circle style = filled, color green; 87;
-node [shape = circle style = filled, color green; 88;
-node [shape = circle style = filled, color green; 89;
-node [shape = circle style = filled, color green; 90;
-node [shape = circle style = filled, color green; 91;
-node [shape = circle style = filled, color green; 92;
-node [shape = circle style = filled, color green; 93;
-node [shape = circle style = filled, color green; 94;
-node [shape = circle style = filled, color green; 95;
-node [shape = circle style = filled, color green; 96;
-node [shape = circle style = filled, color green; 97;
-node [shape = circle style = filled, color green; 98;
-node [shape = circle style = filled, color green; 99;
-node [shape = circle style = filled, color dodgerblue; 100;
-node [shape = circle style = filled, color dodgerblue; 101;
-node [shape = circle style = filled, color dodgerblue; 102;
-node [shape = circle style = filled, color dodgerblue; 103;
-node [shape = circle style = filled, color dodgerblue; 104;
-node [shape = circle style = filled, color dodgerblue; 105;
-node [shape = circle style = filled, color dodgerblue; 106;
-node [shape = circle style = filled, color dodgerblue; 107;
-node [shape = circle style = filled, color dodgerblue; 108;
-node [shape = circle style = filled, color dodgerblue; 109;
-node [shape = circle style = filled, color dodgerblue; 110;
-node [shape = circle style = filled, color dodgerblue; 111;
-node [shape = circle style = filled, color dodgerblue; 112;
-node [shape = circle style = filled, color dodgerblue; 113;
-node [shape = circle style = filled, color dodgerblue; 114;
-node [shape = circle style = filled, color dodgerblue; 115;
-node [shape = circle style = filled, color dodgerblue; 116;
-node [shape = circle style = filled, color dodgerblue; 117;
-node [shape = circle style = filled, color dodgerblue; 118;
-node [shape = circle style = filled, color dodgerblue; 119;
-node [shape = circle style = filled, color dodgerblue; 120;
-node [shape = circle style = filled, color dodgerblue; 121;
-node [shape = circle style = filled, color dodgerblue; 122;
-node [shape = circle style = filled, color dodgerblue; 123;
-node [shape = circle style = filled, color dodgerblue; 124;
-node [shape = circle style = filled, color dodgerblue; 125;
-node [shape = circle style = filled, color dodgerblue; 126;
-node [shape = circle style = filled, color dodgerblue; 127;
-node [shape = circle style = filled, color dodgerblue; 128;
-node [shape = circle style = filled, color dodgerblue; 129;
-node [shape = circle style = filled, color dodgerblue; 130;
-node [shape = circle style = filled, color dodgerblue; 131;
-node [shape = circle style = filled, color dodgerblue; 132;
-node [shape = circle style = filled, color dodgerblue; 133;
-node [shape = circle style = filled, color dodgerblue; 134;
-node [shape = circle style = filled, color dodgerblue; 135;
-node [shape = circle style = filled, color dodgerblue; 136;
-node [shape = circle style = filled, color dodgerblue; 137;
-node [shape = circle style = filled, color dodgerblue; 138;
-node [shape = circle style = filled, color dodgerblue; 139;
-node [shape = circle style = filled, color dodgerblue; 140;
-node [shape = circle style = filled, color dodgerblue; 141;
-node [shape = circle style = filled, color dodgerblue; 142;
-node [shape = circle style = filled, color dodgerblue; 143;
-node [shape = circle style = filled, color dodgerblue; 144;
-node [shape = circle style = filled, color dodgerblue; 145;
-node [shape = circle style = filled, color dodgerblue; 146;
-node [shape = circle style = filled, color dodgerblue; 147;
-node [shape = circle style = filled, color dodgerblue; 148;
-node [shape = circle style = filled, color dodgerblue; 149;
+node [shape = circle style = filled, color = gold]; 0;
+node [shape = circle style = filled, color = gold]; 1;
+node [shape = circle style = filled, color = gold]; 2;
+node [shape = circle style = filled, color = gold]; 3;
+node [shape = circle style = filled, color = gold]; 4;
+node [shape = circle style = filled, color = gold]; 5;
+node [shape = circle style = filled, color = gold]; 6;
+node [shape = circle style = filled, color = gold]; 7;
+node [shape = circle style = filled, color = gold]; 8;
+node [shape = circle style = filled, color = gold]; 9;
+node [shape = circle style = filled, color = gold]; 10;
+node [shape = circle style = filled, color = gold]; 11;
+node [shape = circle style = filled, color = gold]; 12;
+node [shape = circle style = filled, color = gold]; 13;
+node [shape = circle style = filled, color = gold]; 14;
+node [shape = circle style = filled, color = gold]; 15;
+node [shape = circle style = filled, color = gold]; 16;
+node [shape = circle style = filled, color = gold]; 17;
+node [shape = circle style = filled, color = gold]; 18;
+node [shape = circle style = filled, color = gold]; 19;
+node [shape = circle style = filled, color = gold]; 20;
+node [shape = circle style = filled, color = gold]; 21;
+node [shape = circle style = filled, color = gold]; 22;
+node [shape = circle style = filled, color = gold]; 23;
+node [shape = circle style = filled, color = gold]; 24;
+node [shape = circle style = filled, color = gold]; 25;
+node [shape = circle style = filled, color = gold]; 26;
+node [shape = circle style = filled, color = gold]; 27;
+node [shape = circle style = filled, color = gold]; 28;
+node [shape = circle style = filled, color = gold]; 29;
+node [shape = circle style = filled, color = gold]; 30;
+node [shape = circle style = filled, color = gold]; 31;
+node [shape = circle style = filled, color = gold]; 32;
+node [shape = circle style = filled, color = gold]; 33;
+node [shape = circle style = filled, color = gold]; 34;
+node [shape = circle style = filled, color = gold]; 35;
+node [shape = circle style = filled, color = gold]; 36;
+node [shape = circle style = filled, color = gold]; 37;
+node [shape = circle style = filled, color = gold]; 38;
+node [shape = circle style = filled, color = gold]; 39;
+node [shape = circle style = filled, color = gold]; 40;
+node [shape = circle style = filled, color = gold]; 41;
+node [shape = circle style = filled, color = gold]; 42;
+node [shape = circle style = filled, color = gold]; 43;
+node [shape = circle style = filled, color = gold]; 44;
+node [shape = circle style = filled, color = gold]; 45;
+node [shape = circle style = filled, color = gold]; 46;
+node [shape = circle style = filled, color = gold]; 47;
+node [shape = circle style = filled, color = gold]; 48;
+node [shape = circle style = filled, color = gold]; 49;
+node [shape = circle style = filled, color = green]; 50;
+node [shape = circle style = filled, color = green]; 51;
+node [shape = circle style = filled, color = green]; 52;
+node [shape = circle style = filled, color = green]; 53;
+node [shape = circle style = filled, color = green]; 54;
+node [shape = circle style = filled, color = green]; 55;
+node [shape = circle style = filled, color = green]; 56;
+node [shape = circle style = filled, color = green]; 57;
+node [shape = circle style = filled, color = green]; 58;
+node [shape = circle style = filled, color = green]; 59;
+node [shape = circle style = filled, color = green]; 60;
+node [shape = circle style = filled, color = green]; 61;
+node [shape = circle style = filled, color = green]; 62;
+node [shape = circle style = filled, color = green]; 63;
+node [shape = circle style = filled, color = green]; 64;
+node [shape = circle style = filled, color = green]; 65;
+node [shape = circle style = filled, color = green]; 66;
+node [shape = circle style = filled, color = green]; 67;
+node [shape = circle style = filled, color = green]; 68;
+node [shape = circle style = filled, color = green]; 69;
+node [shape = circle style = filled, color = green]; 70;
+node [shape = circle style = filled, color = green]; 71;
+node [shape = circle style = filled, color = green]; 72;
+node [shape = circle style = filled, color = green]; 73;
+node [shape = circle style = filled, color = green]; 74;
+node [shape = circle style = filled, color = green]; 75;
+node [shape = circle style = filled, color = green]; 76;
+node [shape = circle style = filled, color = green]; 77;
+node [shape = circle style = filled, color = green]; 78;
+node [shape = circle style = filled, color = green]; 79;
+node [shape = circle style = filled, color = green]; 80;
+node [shape = circle style = filled, color = green]; 81;
+node [shape = circle style = filled, color = green]; 82;
+node [shape = circle style = filled, color = green]; 83;
+node [shape = circle style = filled, color = green]; 84;
+node [shape = circle style = filled, color = green]; 85;
+node [shape = circle style = filled, color = green]; 86;
+node [shape = circle style = filled, color = green]; 87;
+node [shape = circle style = filled, color = green]; 88;
+node [shape = circle style = filled, color = green]; 89;
+node [shape = circle style = filled, color = green]; 90;
+node [shape = circle style = filled, color = green]; 91;
+node [shape = circle style = filled, color = green]; 92;
+node [shape = circle style = filled, color = green]; 93;
+node [shape = circle style = filled, color = green]; 94;
+node [shape = circle style = filled, color = green]; 95;
+node [shape = circle style = filled, color = green]; 96;
+node [shape = circle style = filled, color = green]; 97;
+node [shape = circle style = filled, color = green]; 98;
+node [shape = circle style = filled, color = green]; 99;
+node [shape = circle style = filled, color = dodgerblue]; 100;
+node [shape = circle style = filled, color = dodgerblue]; 101;
+node [shape = circle style = filled, color = dodgerblue]; 102;
+node [shape = circle style = filled, color = dodgerblue]; 103;
+node [shape = circle style = filled, color = dodgerblue]; 104;
+node [shape = circle style = filled, color = dodgerblue]; 105;
+node [shape = circle style = filled, color = dodgerblue]; 106;
+node [shape = circle style = filled, color = dodgerblue]; 107;
+node [shape = circle style = filled, color = dodgerblue]; 108;
+node [shape = circle style = filled, color = dodgerblue]; 109;
+node [shape = circle style = filled, color = dodgerblue]; 110;
+node [shape = circle style = filled, color = dodgerblue]; 111;
+node [shape = circle style = filled, color = dodgerblue]; 112;
+node [shape = circle style = filled, color = dodgerblue]; 113;
+node [shape = circle style = filled, color = dodgerblue]; 114;
+node [shape = circle style = filled, color = dodgerblue]; 115;
+node [shape = circle style = filled, color = dodgerblue]; 116;
+node [shape = circle style = filled, color = dodgerblue]; 117;
+node [shape = circle style = filled, color = dodgerblue]; 118;
+node [shape = circle style = filled, color = dodgerblue]; 119;
+node [shape = circle style = filled, color = dodgerblue]; 120;
+node [shape = circle style = filled, color = dodgerblue]; 121;
+node [shape = circle style = filled, color = dodgerblue]; 122;
+node [shape = circle style = filled, color = dodgerblue]; 123;
+node [shape = circle style = filled, color = dodgerblue]; 124;
+node [shape = circle style = filled, color = dodgerblue]; 125;
+node [shape = circle style = filled, color = dodgerblue]; 126;
+node [shape = circle style = filled, color = dodgerblue]; 127;
+node [shape = circle style = filled, color = dodgerblue]; 128;
+node [shape = circle style = filled, color = dodgerblue]; 129;
+node [shape = circle style = filled, color = dodgerblue]; 130;
+node [shape = circle style = filled, color = dodgerblue]; 131;
+node [shape = circle style = filled, color = dodgerblue]; 132;
+node [shape = circle style = filled, color = dodgerblue]; 133;
+node [shape = circle style = filled, color = dodgerblue]; 134;
+node [shape = circle style = filled, color = dodgerblue]; 135;
+node [shape = circle style = filled, color = dodgerblue]; 136;
+node [shape = circle style = filled, color = dodgerblue]; 137;
+node [shape = circle style = filled, color = dodgerblue]; 138;
+node [shape = circle style = filled, color = dodgerblue]; 139;
+node [shape = circle style = filled, color = dodgerblue]; 140;
+node [shape = circle style = filled, color = dodgerblue]; 141;
+node [shape = circle style = filled, color = dodgerblue]; 142;
+node [shape = circle style = filled, color = dodgerblue]; 143;
+node [shape = circle style = filled, color = dodgerblue]; 144;
+node [shape = circle style = filled, color = dodgerblue]; 145;
+node [shape = circle style = filled, color = dodgerblue]; 146;
+node [shape = circle style = filled, color = dodgerblue]; 147;
+node [shape = circle style = filled, color = dodgerblue]; 148;
+node [shape = circle style = filled, color = dodgerblue]; 149;
 
+0 -- 8
+0 -- 13
+0 -- 38
+0 -- 41
+0 -- 42
+1 -- 2
+1 -- 3
+1 -- 6
+1 -- 8
+1 -- 9
+1 -- 11
+1 -- 12
+1 -- 13
+1 -- 22
+1 -- 25
+1 -- 29
+1 -- 30
+1 -- 34
+1 -- 35
+1 -- 38
+1 -- 41
+1 -- 42
+1 -- 45
+1 -- 47
+2 -- 3
+2 -- 6
+2 -- 8
+2 -- 9
+2 -- 11
+2 -- 12
+2 -- 13
+2 -- 22
+2 -- 24
+2 -- 25
+2 -- 29
+2 -- 30
+2 -- 34
+2 -- 35
+2 -- 38
+2 -- 41
+2 -- 42
+2 -- 45
+2 -- 47
+2 -- 49
+3 -- 6
+3 -- 7
+3 -- 8
+3 -- 9
+3 -- 11
+3 -- 12
+3 -- 13
+3 -- 22
+3 -- 24
+3 -- 25
+3 -- 26
+3 -- 29
+3 -- 30
+3 -- 34
+3 -- 35
+3 -- 37
+3 -- 38
+3 -- 39
+3 -- 40
+3 -- 41
+3 -- 42
+3 -- 45
+3 -- 47
+3 -- 49
+3 -- 57
+3 -- 60
+4 -- 8
+4 -- 13
+4 -- 38
+4 -- 41
+4 -- 42
+6 -- 8
+6 -- 9
+6 -- 11
+6 -- 12
+6 -- 13
+6 -- 22
+6 -- 25
+6 -- 29
+6 -- 30
+6 -- 34
+6 -- 35
+6 -- 38
+6 -- 41
+6 -- 42
+6 -- 45
+6 -- 47
+6 -- 49
+7 -- 8
+7 -- 12
+7 -- 13
+7 -- 38
+7 -- 41
+7 -- 42
+7 -- 47
+8 -- 9
+8 -- 11
+8 -- 12
+8 -- 13
+8 -- 17
+8 -- 19
+8 -- 20
+8 -- 21
+8 -- 22
+8 -- 23
+8 -- 24
+8 -- 25
+8 -- 26
+8 -- 27
+8 -- 28
+8 -- 29
+8 -- 30
+8 -- 31
+8 -- 34
+8 -- 35
+8 -- 37
+8 -- 38
+8 -- 39
+8 -- 40
+8 -- 41
+8 -- 42
+8 -- 43
+8 -- 45
+8 -- 46
+8 -- 47
+8 -- 49
+8 -- 57
+8 -- 60
+8 -- 93
+8 -- 98
 9 -- 12
 9 -- 13
-9 -- 32
-9 -- 37
+9 -- 22
+9 -- 25
+9 -- 29
+9 -- 30
+9 -- 34
+9 -- 35
+9 -- 38
+9 -- 41
+9 -- 42
+9 -- 45
+9 -- 47
+10 -- 41
+11 -- 12
+11 -- 13
+11 -- 22
+11 -- 29
+11 -- 30
+11 -- 38
+11 -- 41
+11 -- 42
+11 -- 45
+11 -- 47
 12 -- 13
-12 -- 32
-12 -- 37
-13 -- 32
+12 -- 22
+12 -- 24
+12 -- 25
+12 -- 29
+12 -- 30
+12 -- 34
+12 -- 35
+12 -- 38
+12 -- 41
+12 -- 42
+12 -- 45
+12 -- 47
+12 -- 49
+13 -- 17
+13 -- 19
+13 -- 20
+13 -- 21
+13 -- 22
+13 -- 23
+13 -- 24
+13 -- 25
+13 -- 26
+13 -- 27
+13 -- 28
+13 -- 29
+13 -- 30
+13 -- 31
+13 -- 34
+13 -- 35
+13 -- 36
 13 -- 37
-32 -- 37
+13 -- 38
+13 -- 39
+13 -- 40
+13 -- 41
+13 -- 42
+13 -- 43
+13 -- 44
+13 -- 45
+13 -- 46
+13 -- 47
+13 -- 48
+13 -- 49
+13 -- 57
+13 -- 60
+13 -- 93
+13 -- 98
+16 -- 41
+17 -- 38
+17 -- 41
+17 -- 42
+19 -- 38
+19 -- 41
+20 -- 41
+21 -- 38
+21 -- 41
+22 -- 25
+22 -- 29
+22 -- 30
+22 -- 34
+22 -- 35
+22 -- 38
+22 -- 41
+22 -- 42
+22 -- 45
+22 -- 47
+22 -- 60
+23 -- 38
+23 -- 41
+23 -- 42
+24 -- 38
+24 -- 41
+24 -- 42
+24 -- 45
+24 -- 47
+25 -- 29
+25 -- 30
+25 -- 34
+25 -- 38
+25 -- 41
+25 -- 42
+25 -- 45
+25 -- 47
+26 -- 38
+26 -- 41
+26 -- 42
+26 -- 47
+27 -- 38
+27 -- 41
+27 -- 42
+28 -- 38
+28 -- 41
+28 -- 42
+29 -- 30
+29 -- 34
+29 -- 35
+29 -- 38
+29 -- 41
+29 -- 42
+29 -- 45
+29 -- 47
+29 -- 49
+30 -- 34
+30 -- 35
+30 -- 38
+30 -- 41
+30 -- 42
+30 -- 45
+30 -- 47
+31 -- 38
+31 -- 41
+32 -- 41
+34 -- 35
+34 -- 38
+34 -- 41
+34 -- 42
+34 -- 45
+34 -- 47
+35 -- 38
+35 -- 41
+35 -- 42
+35 -- 45
+35 -- 47
+36 -- 41
+37 -- 38
+37 -- 41
+37 -- 42
+37 -- 47
+38 -- 39
+38 -- 40
+38 -- 41
+38 -- 42
+38 -- 43
+38 -- 45
+38 -- 46
+38 -- 47
+38 -- 49
+38 -- 57
+38 -- 60
+38 -- 93
+38 -- 98
+39 -- 41
+39 -- 42
+40 -- 41
+40 -- 42
+40 -- 47
+41 -- 42
+41 -- 43
+41 -- 44
+41 -- 45
+41 -- 46
+41 -- 47
+41 -- 48
+41 -- 49
+41 -- 57
+41 -- 60
+41 -- 93
+41 -- 98
+42 -- 43
+42 -- 45
+42 -- 47
+42 -- 49
+42 -- 57
+42 -- 60
+42 -- 93
+42 -- 98
+45 -- 47
+45 -- 49
+47 -- 49
+47 -- 57
+47 -- 60
 }
