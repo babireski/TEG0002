@@ -6,7 +6,7 @@ int main(void)
 	int maximum = 0;
 	int minimum = maximum;
 
-	read(&samples);
+	readCsv(&samples);
 
 	printf("sepLen\tsepWid\tpetLen\tpetWid\n");
 

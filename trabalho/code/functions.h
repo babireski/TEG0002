@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 #include "graph.h"
 #define bound 0.3
+#define numSamples 150
 
 float distance(sample p, sample q)
 {
@@ -70,16 +70,6 @@ void link(graph *descriptor, float **distances)
     }
 }
 
-void load()
-{
-
-}
-
-void save()
-{
-    
-}
-
 void plot(graph *descriptor)
 {
     FILE *plot = fopen("iris.gv", "w");
@@ -120,25 +110,6 @@ void plot(graph *descriptor)
     fprintf(plot, "}");
 
     fclose(plot);
-=======
-#include "graph.h"
-#include <stdio.h>
-#define numSamples 150
-
-float distance(sample *p, sample *q)
-{
-	float square = 0;
-	square = square + (p -> petal.length + q -> petal.length) * (p -> petal.length + q -> petal.length);
-	square = square + (p -> petal.width + q -> petal.width) * (p -> petal.width + q -> petal.width);
-	square = square + (p -> sepal.length + q -> sepal.length) * (p -> sepal.length + q -> sepal.length);
-	square = square + (p -> sepal.width + q -> sepal.width) * (p -> sepal.width + q -> sepal.width);
-
-	return (square);
-}
-
-float normalize(float x, float maximum, float minimum)
-{
-	return (x - minimum) / (maximum - minimum);
 }
 
 sample* newSamples()
@@ -204,11 +175,6 @@ void readCsv(sample **samples)
 	free(variety);
 }
 
-void load()
-{
-
-}
-
 void printGraph(graph* graph)
 {
 
@@ -246,10 +212,4 @@ void saveTxt(graph* graph)
 		fprintf(fptr, "\n");
 	}
 	fclose(fptr);
-}
-
-void plot()
-{
-
->>>>>>> f8f5a45ff5cd7c7c22afc6db0006c8a087e20b12
 }
