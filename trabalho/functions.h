@@ -1,5 +1,6 @@
 #include "graph.h"
 #include <stdio.h>
+#define numSamples 150
 
 float distance(sample *p, sample *q)
 {
@@ -9,7 +10,7 @@ float distance(sample *p, sample *q)
 	square = square + (p -> sepal.length + q -> sepal.length) * (p -> sepal.length + q -> sepal.length);
 	square = square + (p -> sepal.width + q -> sepal.width) * (p -> sepal.width + q -> sepal.width);
 
-	return sqrt(square);
+	return (square);
 }
 
 float normalize(float x, float maximum, float minimum)
@@ -17,8 +18,9 @@ float normalize(float x, float maximum, float minimum)
 	return (x - minimum) / (maximum - minimum);
 }
 
-sample* newSamples() {
-	sample* samples = (sample *) malloc(sizeof(sample*));
+sample* newSamples()
+{
+	sample* samples = (sample *) malloc(numSamples * sizeof(sample));
 
 	return samples;
 }
@@ -26,7 +28,7 @@ sample* newSamples() {
 // All the samples read will be stored in samples pointer, which
 // will be changed by reference, and while reading the database,
 // the maximum and minimum will be calculated, and also changed by reference
-void read(sample **samples, int *maximum, int *minimum, int *num)
+void read(sample **samples)
 {
 	*samples = newSamples();
 	FILE *dataset = fopen("dataset.csv", "r");
@@ -37,6 +39,7 @@ void read(sample **samples, int *maximum, int *minimum, int *num)
 		exit(-1);
 	}
 
+	int num = 0;
 	char* firstLine = (char*) malloc(sizeof(char) * 100);
 	char* variety = (char*) malloc(sizeof(char*));
 	float sepLen;
@@ -49,26 +52,22 @@ void read(sample **samples, int *maximum, int *minimum, int *num)
 	free(firstLine);
 	while (!feof(dataset))
 	{
-		if (*num > 149) {
-			return;
-		}
 		fscanf(dataset, "%f,%f,%f,%f,%s\n", &sepLen, &sepWid, &petLen, &petWid, variety);
-		samples[*num] = (sample*) malloc(sizeof(sample));
-		(*samples)[*num].sepal.length = sepLen;
-		(*samples)[*num].sepal.width = sepWid;
-		(*samples)[*num].petal.length = petLen;
-		(*samples)[*num].petal.width = petWid;
+		(*samples)[num].sepal.length = sepLen;
+		(*samples)[num].sepal.width = sepWid;
+		(*samples)[num].petal.length = petLen;
+		(*samples)[num].petal.width = petWid;
 		if (strcmp(variety, "\"Setosa\"") == 0)
 		{
-			(*samples)[*num].species = 1;
+			(*samples)[num].species = 1;
 		}
 		else if (strcmp(variety, "\"Versicolor\"") == 0)
 		{
-			(*samples)[*num].species = 2;
+			(*samples)[num].species = 2;
 		}
 		else if (strcmp(variety, "\"Virginica\"") == 0)
 		{
-			(*samples)[*num].species = 3;
+			(*samples)[num].species = 3;
 		}
 		else
 		{
@@ -77,8 +76,9 @@ void read(sample **samples, int *maximum, int *minimum, int *num)
 		}
 		// mallocating a bit wrong, need to find out why.
 		// the rest aparently is working fine
-		*num = *num + 1;
+		num = num + 1;
 	}
+	free(variety);
 }
 
 void load()

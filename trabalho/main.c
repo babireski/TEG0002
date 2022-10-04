@@ -2,19 +2,19 @@
 
 int main(void)
 {
-    sample* samples = NULL;
-    int maximum = 0;
-    int minimum = maximum;
-    int numOfSamples = 0;
+	sample* samples = NULL;
+	int maximum = 0;
+	int minimum = maximum;
 
-    read(&samples, &maximum, &minimum, &numOfSamples);
+	read(&samples);
 
-    printf("samples read: %d\n", numOfSamples);
-    printf("sepLen\tsepWid\tpetLen\tpetWid\n");
-    for (int i = 0; i < numOfSamples; i++)
-    {
-        printf("%.1f\t%.1f\t%.1f\t%.1f\t%d\n", samples[i].sepal.length, samples[i].sepal.width, samples[i].petal.length, samples[i].petal.width, samples[i].species);
-    }
+	printf("sepLen\tsepWid\tpetLen\tpetWid\n");
 
-    return 0;
+	for (int i = 0; i < numSamples; i++)
+	{
+		printf("%.1f\t%.1f\t%.1f\t%.1f\t%d\n", samples[i].sepal.length, samples[i].sepal.width, samples[i].petal.length, samples[i].petal.width, samples[i].species);
+	}
+	free(samples);
+
+	return 0;
 }

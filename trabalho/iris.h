@@ -12,13 +12,13 @@ typedef struct sample sample;
 
 struct dimensions
 {
-    float length;
-    float width;
+	float length;
+	float width;
 };
 
 struct sample
 {
-    dimensions petal;
-    dimensions sepal;
-    int species;
+	dimensions petal;
+	dimensions sepal;
+	int species;
 };
