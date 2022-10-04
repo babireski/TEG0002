@@ -92,20 +92,20 @@ void read(graph *descriptor)
 	while(!feof(dataset))
 	{
 		sample s = create_sample();
+		char *buffer;
+		fscanf(dataset, "%f,%f,%f,%f,%s\n", &s.sepal.length, &s.sepal.length, &s.sepal.length, &s.sepal.length, species);
 
-		fscanf(dataset, "%f,%f,%f,%f,%s\n", s.sepal.length, s.sepal.length, s.sepal.length, s.sepal.length, species);
-
-		if (strcmp(species, "\"Setosa\"") == SETOSA)
+		if (strcmp(species, "\"Setosa\"") == 0)
 		{
 			s.species = SETOSA;
 		}
 
-		else if (strcmp(species, "\"Versicolor\"") == VERSICOLOUR)
+		else if (strcmp(species, "\"Versicolor\"") == 0)
 		{
 			s.species = VERSICOLOUR;
 		}
 
-		else if (strcmp(species, "\"Virginica\"") == VIRGINICA)
+		else if (strcmp(species, "\"Virginica\"") == 0)
 		{
 			s.species = VIRGINICA;
 		}
@@ -125,17 +125,18 @@ void read(graph *descriptor)
 
 void print(graph* graph)
 {
+	printf("%i\n", graph->order);
+
 	for(int i = 0; i < graph -> order; i++)
 	{
-		printf("v[%d] --> ", i);
-
-		if (graph->nodes[i].edges->next == NULL)
+		for(edge *navigator = graph -> nodes[i].edges; navigator != NULL; navigator = navigator -> next)
 		{
-			printf("%d", graph->nodes[i].edges->node);
+			if(navigator -> node > i)
+			{
+				printf("%i -- %i", i, navigator -> node);
+				printf("\n");
+			}
 		}
-
-		printf("%d -->", graph->nodes[i].edges->node);
-		printf("\n");
 	}
 }
 

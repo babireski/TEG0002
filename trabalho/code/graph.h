@@ -47,7 +47,17 @@ void add_edge(graph *descriptor, int head, int tail)
 	edge *new_edge = (edge *) malloc(sizeof(edge));
 	new_edge -> node = tail;
 	new_edge -> next = NULL;
-	edge *last;
-	for(last = descriptor -> nodes[head].edges; last != NULL; last = last -> next);
-	last -> next = new_edge;
+
+	edge *last = descriptor -> nodes[head].edges;
+
+	if(last)
+	{
+		for(last; last -> next != NULL; last = last -> next);
+		last -> next = new_edge;
+	}
+
+	else
+	{
+		descriptor -> nodes[head].edges = new_edge;
+	}
 }
