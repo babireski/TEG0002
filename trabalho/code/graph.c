@@ -57,6 +57,7 @@ void unload(graph *descriptor)
 
 		free(descriptor -> nodes);
 		descriptor -> nodes = NULL;
+		descriptor -> order = 0;
 	}
 }
 

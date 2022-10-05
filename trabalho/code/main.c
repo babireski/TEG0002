@@ -111,13 +111,14 @@ int main()
             break;
 
             case 6:
-				plot(descriptor);
+				graphviz(descriptor);
 				printf("Arquivo .dot gerado!");
 				wait();
             break;
 
             case 7:
-				printf("A ser implementado!");
+				plot();
+				printf("Arquivo .svg gerado!");
 				wait();
             break;
 
