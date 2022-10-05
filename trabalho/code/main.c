@@ -24,30 +24,16 @@ void menu()
 	printf("1. Ler dados de arquivo .txt\n");
 	printf("2. Ler dados de arquivo .csv\n");
 	printf("3. Imprimir grafo no terminal\n");
-	printf("4. Gerar arquivo .txt\n");
-	printf("5. Gerar arquivo .dot\n");
-	printf("6. Gerar arquivo .svg\n");
+	printf("4. Descarregar grafo\n");
+	printf("5. Gerar arquivo .txt\n");
+	printf("6. Gerar arquivo .dot\n");
+	printf("7. Gerar arquivo .svg\n");
 	printf("\n");
 }
 
-int main(int argc, char **argv)
+int main()
 {
-	++argv, --argc;
 	graph *descriptor = create();
-
-	if (argc <= 0)
-	{
-		readTxt(descriptor);
-	}
-
-	else
-	{
-		readCsv(descriptor);
-		link(descriptor);
-		print(descriptor);
-		saveTxt(descriptor);
-	}
-	plot(descriptor);
 
 	int choice = 0;
 
@@ -63,6 +49,7 @@ int main(int argc, char **argv)
         {
             case 0:
 				printf("Encerrando programa.");
+				destroy(descriptor);
 				return 0;
             break;
 
@@ -97,23 +84,39 @@ int main(int argc, char **argv)
             break;
 
             case 3:
-				print(descriptor);
+				if(descriptor -> nodes)
+				{
+					print(descriptor);
+					wait();
+				}
+
+				else
+				{
+					printf("Erro: dados ainda precisam ser carregados!");
+				}
+
 				wait();
             break;
 
             case 4:
+				unload(descriptor);
+				printf("Grafo descarregado!");
+				wait();
+            break;
+
+            case 5:
 				saveTxt(descriptor);
 				printf("Arquivo .txt gerado!");
 				wait();
             break;
 
-            case 5:
+            case 6:
 				plot(descriptor);
 				printf("Arquivo .dot gerado!");
 				wait();
             break;
 
-            case 6:
+            case 7:
 				printf("A ser implementado!");
 				wait();
             break;

@@ -10,7 +10,6 @@ float normalize(float x, float maximum, float minimum)
 	return (x - minimum) / (maximum - minimum);
 }
 
-
 void link(graph *descriptor)
 {
 	int m = descriptor -> order;
@@ -127,12 +126,14 @@ void print(graph* graph)
 void saveTxt(graph* graph)
 {
 	FILE *fptr = fopen("data/graph.txt", "w+");
+
 	if (fptr == NULL)
 	{
 		printf("Erro ao carregar arquivo.\n");
 		exit(-1);
 	}
-	fprintf(fptr, "%d\n", graph->order);
+
+	fprintf(fptr, "%d\n", graph -> order);
 
 	for(int i = 0; i < graph -> order; i++)
 	{
@@ -144,6 +145,7 @@ void saveTxt(graph* graph)
 			}
 		}
 	}
+
 	fclose(fptr);
 }
 
@@ -189,48 +191,49 @@ void plot(graph *descriptor)
 void readTxt(graph *descriptor)
 {
 	FILE *fptr = fopen("data/graph.txt", "r");
+
 	if (fptr == NULL)
 	{
 		printf("Erro ao carregar arquivo.\n");
 		exit(-1);
 	}
 
-	fscanf(fptr, "%d", &descriptor->order);
-	descriptor->nodes = (node*) malloc(descriptor->order * sizeof(node));
-	descriptor->nodes->edges = NULL;
+	fscanf(fptr, "%d", &descriptor -> order);
+	descriptor -> nodes = (node*) malloc(descriptor -> order * sizeof(node));
+	descriptor -> nodes -> edges = NULL;
 	
 	int node1, node2;
 
 	while(!feof(fptr))
 	{
-		if (node1 / (descriptor->order / 3) == 0) {
+		if (node1 / (descriptor->order / 3) == 0)
+		{
 			descriptor->nodes[node1].sample.species = SETOSA;
-			printf("node %d = %d\n", node1, SETOSA);
 		}
 
-		else if (node1 / (descriptor->order / 3) == 1) {
+		else if (node1 / (descriptor->order / 3) == 1)
+		{
 			descriptor->nodes[node1].sample.species = VERSICOLOUR;
-			printf("node %d = %d\n", node1, VERSICOLOUR);
 		}
 
-		else if (node1 / (descriptor->order / 3) == 2) {
+		else if (node1 / (descriptor->order / 3) == 2)
+		{
 			descriptor->nodes[node1].sample.species = VIRGINICA;
-			printf("node %d = %d\n", node1, VIRGINICA);
 		}
 
-		if (node2 / (descriptor->order / 3) == 0) {
+		if (node2 / (descriptor->order / 3) == 0)
+		{
 			descriptor->nodes[node2].sample.species = SETOSA;
-			printf("node %d = %d\n", node2, SETOSA);
 		}
 
-		else if (node2 / (descriptor->order / 3) == 1) {
+		else if (node2 / (descriptor->order / 3) == 1)
+		{
 			descriptor->nodes[node2].sample.species = VERSICOLOUR;
-			printf("node %d = %d\n", node2, VERSICOLOUR);
 		}
 
-		else if (node2 / (descriptor->order / 3) == 2) {
+		else if (node2 / (descriptor->order / 3) == 2)
+		{
 			descriptor->nodes[node2].sample.species = VIRGINICA;
-			printf("node %d = %d\n", node2, VIRGINICA);
 		}
 
 		fscanf(fptr, "%d,%d", &node1, &node2);

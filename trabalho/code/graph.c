@@ -38,3 +38,47 @@ void addEdge(graph *descriptor, int head, int tail)
 		descriptor -> nodes[head].edges = newEdge;
 	}
 }
+
+void unload(graph *descriptor)
+{
+	if(descriptor -> nodes)
+	{
+		for(int i = 0; i < descriptor -> order; i++)
+		{
+			edge *navigator = descriptor -> nodes -> edges;
+
+			do
+			{
+				edge *previous = navigator;
+				navigator = navigator -> next;
+				free(previous);
+			}
+			while(navigator);
+		}
+
+		free(descriptor -> nodes);
+	}
+}
+
+void destroy(graph *descriptor)
+{
+	if(descriptor -> nodes)
+	{
+		for(int i = 0; i < descriptor -> order; i++)
+		{
+			edge *navigator = descriptor -> nodes -> edges;
+
+			do
+			{
+				edge *previous = navigator;
+				navigator = navigator -> next;
+				free(previous);
+			}
+			while(navigator);
+		}
+
+		free(descriptor -> nodes);
+	}
+
+	free(descriptor);
+}
