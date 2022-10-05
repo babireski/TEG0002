@@ -1,5 +1,5 @@
 #include "graph.h"
-#define bound 0.30
+#define bound 0.11
 #define numSamples 150
 
 float distance(sample p, sample q);

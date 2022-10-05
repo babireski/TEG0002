@@ -49,7 +49,7 @@ void link(graph *descriptor)
 	{
 		for(int j = i + 1; j < m; j++)
 		{
-			if(distances[i][j] < bound)
+			if(distances[i][j] <= bound)
 			{
 				addEdge(descriptor, i, j);
 				addEdge(descriptor, j, i);
@@ -181,7 +181,7 @@ void plot(graph *descriptor)
 		}
 	}
 
-	fprintf(plot, "}");
+	fprintf(plot, "\n}");
 
 	fclose(plot);
 }
