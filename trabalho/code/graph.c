@@ -45,18 +45,18 @@ void unload(graph *descriptor)
 	{
 		for(int i = 0; i < descriptor -> order; i++)
 		{
-			edge *navigator = descriptor -> nodes -> edges;
+			edge *navigator = descriptor -> nodes[i].edges;
 
-			do
+			while(navigator)
 			{
 				edge *previous = navigator;
 				navigator = navigator -> next;
 				free(previous);
 			}
-			while(navigator);
 		}
 
 		free(descriptor -> nodes);
+		descriptor -> nodes = NULL;
 	}
 }
 
@@ -66,15 +66,14 @@ void destroy(graph *descriptor)
 	{
 		for(int i = 0; i < descriptor -> order; i++)
 		{
-			edge *navigator = descriptor -> nodes -> edges;
+			edge *navigator = descriptor -> nodes[i].edges;
 
-			do
+			while(navigator)
 			{
 				edge *previous = navigator;
 				navigator = navigator -> next;
 				free(previous);
 			}
-			while(navigator);
 		}
 
 		free(descriptor -> nodes);
