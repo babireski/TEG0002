@@ -78,6 +78,7 @@ int main()
 				else
 				{
 					readCsv(descriptor);
+					link(descriptor);
 					printf("Dados carregados de .csv!");
 					wait();
 				}
