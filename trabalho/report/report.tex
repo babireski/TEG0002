@@ -12,33 +12,46 @@
     
     \section{Introdução}
         \paragraph{} Trata-se de um projeto que tem como proposta a implementação de um programa que receba como entrada um conjunto de dados sobre a flor {\it Iris}. O conjunto de dados apresenta informações sobre as medidas de comprimento e largura da sépala e da pétala de cento e cinquenta amostas de três espécies distintas da planta.
-    
+		\par Em suma, cada amostra da planta deverá ser tratada como um ponto no espaço quadridimensional. Em seguida, deve-se calcular a distância euclidiana – conforme (1) – entre todos os pares de pontos.
+
         \begin{equation}
             \sqrt{\sum_{i = 1} ^ n {(p_i - q_i)} ^ 2}
         \end{equation}
 
-        A lonjura entre os pontos no espaço quadridimensional devem, em seguida, ser normalizadas por meio da equação abaixo (2).
+        Calculadas as distâncias essas devem, em seguida, ser normalizadas por meio da equação abaixo (2). Por fim, deverá ser montado um grafo onde cada nodo corresponde a uma amostra, e uma aresta entre dois pontos existirá somente se a distância entre eles for menor ou igual a 0.3.
         \begin{equation}
             x' = \frac{x - \min(x)}{\max(x) - \min(x)}
         \end{equation}
 
-
+		\section{Compilação}
+			\subsection{Dependências}
+				\paragraph{} São dependências do projeto, a biblioteca {\it Graphviz} sendo utilizada a linguagem {\it Dot} para a visualização do grafo gerado, utiliza-se ainda o {\it Makefile} para compilação de todo o projeto, para que não seja necessário ficar compilando os arquivos de forma individual.
+			
+			\subsection{Compilação}
+				\paragraph{} Uma vez no diretório do projeto, navegue para adentro, compile, utilizando {\it make}.
+			
+			\subsection{Execução}
+				\paragraph{} Para executar, basta executar o arquivo de saída chamado {\it main}, utilizando o comando {\it ./main}. Para utilização, utilize as funcionalidades desejadas até que seja inserido um {\it 0} para encerramento do programa. Os arquivos gerados ao se utilizar opções {\it 4}, {\it 5}, {\it 6} do menu, são colocados no diretório {\it data/}. Para visualizar o grafo gerado, basta abrir o arquivo no formato {\it (Scalable Vector Graphics)}, chamado {\it graph.svg}.
+		
     \section{Documentação}
-        Na presente seção, será apresentada a documentação detalhada do código implementado.
+		\paragraph{} Abaixo encontra-se listada a documentação de todas as funções usadas na aplicação:
+        \begin{itemize}
+			\item \texttt{graph* create()}: cria e retorna um descritor da estrutura do grafo;
+			\item \texttt{void addNode(graph *descriptor, sample sample)}: recebe um des- critor de grafo e os dados de uma amostra e, em seguida, adiciona a amostra como um novo nodo do grafo;
+			\item \texttt{void addEdge(graph *descriptor, int head, int tail)}: recebe um descritor de grafo e o índice de dois nodos e cria uma aresta entre eles;
+			\item \texttt{void destroy(graph *descriptor)}: desaloca todo o grafo da memória;
+			\item \texttt{float distance(sample p, sample q)}: calcula a distância euclidiana entre duas amostras;
+			\item \texttt{float normalize(float x, float maximum, float minimum)}: recebe como entrada um valor e o normaliza com base no máximo e mínimo também fornecidos;
+			\item \texttt{void readTxt(graph *descriptor)}: carrega o grafo de um arquivo .txt;
+			\item \texttt{void readCsv(graph *descriptor)}: carrega os dados das amostras de um arquivo .cvs e gera os nodos;
+			\item \texttt{void link(graph *descriptor)}: gera uma tabela com as distâncias normalizadas entre as amostras e, em seguida, gera as arestas entre os nodos de acordo com um limite definido (0.3);
+			\item \texttt{void print(graph* graph)}: imprime o grafo no terminal;
+			\item \texttt{void saveTxt(graph* graph)}: salva o grafo em um arquivo de texto;
+			\item \texttt{void graphviz(graph *descriptor)}: gera um arquivo .dot que representa o grafo;
+			\item \texttt{void plot()}: gera um arquivo .svg do grafo.
+		\end{itemize}
 
     \section{Resultados}
-        Na presente seção, serão apresentados os resultados obtidos pela equipe.
-    
-    \section{Compilação}
-        \subsection{Dependências}
-            \paragraph{} São dependências do projeto, a biblioteca {\it Graphviz} sendo utilizada a linguagem {\it Dot} para a visualização do grafo gerado, utiliza-se ainda o {\it Makefile} para compilação de todo o projeto, para que não seja necessário ficar compilando os arquivos de forma individual.
-        
-        \subsection{Compilação}
-            \paragraph{} Uma vez no diretório do projeto, navegue para adentro, com a utilização do comando {\it cd trabalho/}, após feito, compile, utilizando {\it make}.
-        
-        \subsection{Execução}
-            \paragraph{} Para executar, basta executar o arquivo de saída chamado {\it main}, utilizando o comando {\it ./main}. Para utilização, utilize as funcionalidades desejadas até que seja inserido um {\it 0} para encerramento do programa. Os arquivos gerados ao se utilizar opções {\it 4}, {\it 5}, {\it 6} do menu, são colocados no diretório {\it data/}. Para visualizar o grafo gerado, basta abrir o arquivo no formato {\it (Scalable Vector Graphics)}, chamado {\it graph.svg}.
-    \section{Conclusão}
-        Na presente seção, será feita a conclusão.
-
+        \paragraph{} Utilizado como limite o valor 0.3 percebeu-se que as {\it Setosas} quase formaram um grafo desconexo das demais plantas. As {\it Versicolors} e as {\it Virginicas}, entretanto, apresentaram muitas relações entre si. Após testes realizados pela equipe, concluiu-se que os resultados mais visualmente agradáveis ocorreram quando o limite estava ao redor de 0.15, porque assim o grupo das {\it Setosas} fica completamente desconexo do restante, e as outras duas espécies parecem um pouco mais separadas (embora ainda muito interconectadas).
+		\par Disso, pode-se concluir que as {\it Setosas} são mais facilmente diferenciáveis pelas dimensões da pétala e sépala do que as outras duas espécies de {\it Iris}.
 \end{document}
