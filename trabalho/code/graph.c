@@ -39,28 +39,6 @@ void addEdge(graph *descriptor, int head, int tail)
 	}
 }
 
-void unload(graph *descriptor)
-{
-	if(descriptor -> nodes)
-	{
-		for(int i = 0; i < descriptor -> order; i++)
-		{
-			edge *navigator = descriptor -> nodes[i].edges;
-
-			while(navigator)
-			{
-				edge *previous = navigator;
-				navigator = navigator -> next;
-				free(previous);
-			}
-		}
-
-		free(descriptor -> nodes);
-		descriptor -> nodes = NULL;
-		descriptor -> order = 0;
-	}
-}
-
 void destroy(graph *descriptor)
 {
 	if(descriptor -> nodes)
