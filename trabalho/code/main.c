@@ -34,11 +34,17 @@ void menu()
 int main()
 {
 	graph *descriptor = create();
+	int graphUnloaded = 0;
 
 	int choice = 0;
 
     while(1)
     {
+			if (graphUnloaded)
+			{
+				descriptor = create();
+				graphUnloaded = 0;
+			}
         clean();
         menu();
         printf("Escolha uma funcionalidade: ");
@@ -101,6 +107,7 @@ int main()
 
             case 4:
 				unload(descriptor);
+				graphUnloaded = 1;
 				printf("Grafo descarregado!");
 				wait();
             break;
