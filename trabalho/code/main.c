@@ -24,9 +24,10 @@ void menu()
 	printf("1. Ler dados de arquivo .txt\n");
 	printf("2. Ler dados de arquivo .csv\n");
 	printf("3. Imprimir grafo no terminal\n");
-	printf("4. Gerar arquivo .txt\n");
-	printf("5. Gerar arquivo .dot\n");
-	printf("6. Gerar arquivo .svg\n");
+	printf("4. Gerar acuracia da classificacao\n");
+	printf("5. Gerar arquivo .txt\n");
+	printf("6. Gerar arquivo .dot\n");
+	printf("7. Gerar arquivo .svg\n");
 	printf("\n");
 }
 
@@ -99,18 +100,33 @@ int main()
             break;
 
             case 4:
+				if(descriptor -> nodes)
+				{
+					printf("Acuracia: %.2lf%%\n", (accuracy(descriptor)));
+					wait();
+				}
+
+				else
+				{
+					printf("Erro: dados ainda precisam ser carregados!");
+				}
+
+				wait();
+            break;
+
+						case 5:
 				saveTxt(descriptor);
 				printf("Arquivo .txt gerado!");
 				wait();
             break;
 
-            case 5:
+            case 6:
 				graphviz(descriptor);
 				printf("Arquivo .dot gerado!");
 				wait();
             break;
 
-            case 6:
+            case 7:
 				plot();
 				printf("Arquivo .svg gerado!");
 				wait();

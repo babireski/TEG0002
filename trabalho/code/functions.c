@@ -247,3 +247,25 @@ void plot()
 {
 	system("sfdp -x -Goverlap=scale -Tsvg data/iris.dot > data/iris.svg");
 }
+
+float accuracy(graph *graph)
+{
+	int confusion[2][2] = {{0, 0}, {0, 0}}; // confusion[ACTUAL][PREDICTED]
+
+	for(int i = 0; i < graph -> order; i++)
+	{
+		for(edge *edge = graph -> nodes[i].edges; edge != NULL; edge = edge -> next)
+		{
+			if((graph->nodes[i].sample.species == SETOSA && graph->nodes[edge -> node].sample.species == SETOSA) || (graph->nodes[i].sample.species != SETOSA && graph->nodes[edge -> node].sample.species != SETOSA))
+			{
+				confusion[P][P]++;
+			}
+
+			else
+			{
+				confusion[N][P]++;
+			}
+		}
+	}
+	return (float) (confusion[P][P] + confusion[N][N]) / (confusion[P][N] + confusion[N][P]);
+}

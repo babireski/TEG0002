@@ -9,7 +9,7 @@
 \begin{document}
 
     \maketitle
-    
+
     \section{Introdução}
         \paragraph{} Trata-se de um projeto que tem como proposta a implementação de um programa que receba como entrada um conjunto de dados sobre a flor {\it Iris}. O conjunto de dados apresenta informações sobre as medidas de comprimento e largura da sépala e da pétala de cento e cinquenta amostas de três espécies distintas da planta.
 		\par Em suma, cada amostra da planta deverá ser tratada como um ponto no espaço quadridimensional. Em seguida, deve-se calcular a distância euclidiana – conforme (1) – entre todos os pares de pontos.
@@ -26,13 +26,13 @@
 		\section{Compilação}
 			\subsection{Dependências}
 				\paragraph{} São dependências do projeto, a biblioteca {\it Graphviz} sendo utilizada a linguagem {\it Dot} para a visualização do grafo gerado, utiliza-se ainda o {\it Makefile} para compilação de todo o projeto, para que não seja necessário ficar compilando os arquivos de forma individual.
-			
+
 			\subsection{Compilação}
 				\paragraph{} Uma vez no diretório do projeto, navegue para adentro, compile, utilizando {\it make}.
-			
+
 			\subsection{Execução}
 				\paragraph{} Para executar, basta executar o arquivo de saída chamado {\it main}, utilizando o comando {\it ./main}. Para utilização, utilize as funcionalidades desejadas até que seja inserido um {\it 0} para encerramento do programa. Os arquivos gerados ao se utilizar opções {\it 4}, {\it 5}, {\it 6} do menu, são colocados no diretório {\it data/}. Para visualizar o grafo gerado, basta abrir o arquivo no formato {\it (Scalable Vector Graphics)}, chamado {\it graph.svg}.
-		
+
     \section{Documentação}
 		\paragraph{} Abaixo encontra-se listada a documentação de todas as funções usadas na aplicação:
         \begin{itemize}
@@ -48,10 +48,15 @@
 			\item \texttt{void print(graph* graph)}: imprime o grafo no terminal;
 			\item \texttt{void saveTxt(graph* graph)}: salva o grafo em um arquivo de texto;
 			\item \texttt{void graphviz(graph *descriptor)}: gera um arquivo .dot que representa o grafo;
-			\item \texttt{void plot()}: gera um arquivo .svg do grafo.
+			\item \texttt{void plot()}: gera um arquivo .svg do grafo;
+			\item \texttt{float accuracy(graph *graph)}: gera a acurácia dado um grafo.
 		\end{itemize}
 
     \section{Resultados}
         \paragraph{} Utilizado como limite o valor 0.3 percebeu-se que as {\it Setosas} quase formaram um grafo desconexo das demais plantas. As {\it Versicolors} e as {\it Virginicas}, entretanto, apresentaram muitas relações entre si. Após testes realizados pela equipe, concluiu-se que os resultados mais visualmente agradáveis ocorreram quando o limite estava ao redor de 0.15, porque assim o grupo das {\it Setosas} fica completamente desconexo do restante, e as outras duas espécies parecem um pouco mais separadas (embora ainda muito interconectadas).
 		\par Disso, pode-se concluir que as {\it Setosas} são mais facilmente diferenciáveis pelas dimensões da pétala e sépala do que as outras duas espécies de {\it Iris}.
+
+    \section{Acurácia}
+        \paragraph{} Para se obter a acurácia de 96.2\% da classificação das raças dos dois grandes grupos de {\itÍris}, sendo estes o grupo das {\it Setosas} e das demais, utilizando como limite da distância euclidiana, o valor de 0.3, foi feita uma matriz de confusão, utilizando os {\it true positive}, {\it true negative} e os {\it false negative} e {\it false positive} em que esta é preenchida percorrendo o grafo com dois laços de repetição.
+        \par A função {\it accuracy} é a responsável por fazer a leitura e caminhar sobre as arestas do grafo passado como argumento e retorna a acurácia, fazendo os devidos cálculos durante o caminhar sobre o grafo.
 \end{document}
